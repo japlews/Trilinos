@@ -20,9 +20,6 @@
 
 namespace Tempus {
 
-// Forward Declaration for recursive includes (this Stepper <--> StepperFactory)
-template<class Scalar> class StepperFactory;
-
 
 template<class Scalar>
 StepperStaggeredForwardSensitivity<Scalar>::

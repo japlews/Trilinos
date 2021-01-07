@@ -99,8 +99,7 @@ public:
     { return stepperBEAppAction_; }
 
     /// Set the predictor
-    void setPredictor(std::string predictorType = "None");
-    void setPredictor(Teuchos::RCP<Stepper<Scalar> > predictorStepper);
+    void setPredictor(Teuchos::RCP<Stepper<Scalar> > predictorStepper = Teuchos::null);
 
     /// Set the initial conditions and make them consistent.
     virtual void setInitialConditions (

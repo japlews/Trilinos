@@ -104,7 +104,6 @@ public:
     { return stepperBDF2AppAction_; }
 
     /// Set the stepper to use in first step
-    void setStartUpStepper(std::string startupStepperType);
     void setStartUpStepper(Teuchos::RCP<Stepper<Scalar> > startupStepper);
 
     /// Initialize during construction and after changing input parameters.

@@ -475,9 +475,10 @@ createStepperBDF2(
   if (model != Teuchos::null) {
     stepper->setModel(model);
     setStepperSolverValues(stepper, stepperPL);
-    std::string startUpStepper = "DIRK 1 Stage Theta Method";
-    if (stepperPL != Teuchos::null) startUpStepper =
-      stepperPL->get<std::string>("Start Up Stepper Type", startUpStepper);
+    std::string startUpStepperName = "DIRK 1 Stage Theta Method";
+    if (stepperPL != Teuchos::null) startUpStepperName =
+      stepperPL->get<std::string>("Start Up Stepper Type", startUpStepperName);
+    auto startUpStepper = createStepper(startUpStepperName);
     stepper->setStartUpStepper(startUpStepper);
     stepper->initialize();
   }
@@ -520,10 +521,13 @@ createStepperBackwardEuler(
     stepper->setModel(model);
     setStepperSolverValues(stepper, stepperPL);
 
-    std::string predictor = "None";
-    if (stepperPL != Teuchos::null) predictor =
-      stepperPL->get<std::string>("Predictor Stepper Type", predictor);
-    stepper->setPredictor(predictor);
+    stepper->setPredictor();
+    if (stepperPL != Teuchos::null) {
+      std::string predictorName =
+        stepperPL->get<std::string>("Predictor Stepper Type", "None");
+      if (predictorName != "None")
+        stepper->setPredictor(createStepper(predictorName));
+    }
 
     stepper->initialize();
   }

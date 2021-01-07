@@ -10,7 +10,7 @@
 #define Tempus_StepperIMEX_RK_impl_hpp
 
 #include "Tempus_config.hpp"
-#include "Tempus_StepperFactory.hpp"
+#include "Tempus_StepperRKButcherTableau.hpp"
 #include "Tempus_WrapperModelEvaluatorPairIMEX_Basic.hpp"
 #include "Teuchos_VerboseObjectParameterListHelpers.hpp"
 #include "Thyra_VectorStdOps.hpp"
@@ -18,9 +18,6 @@
 
 
 namespace Tempus {
-
-// Forward Declaration for recursive includes (this Stepper <--> StepperFactory)
-template<class Scalar> class StepperFactory;
 
 
 template<class Scalar>

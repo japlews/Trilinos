@@ -10,7 +10,6 @@
 #define Tempus_StepperNewmarkImplicitDForm_impl_hpp
 
 #include "NOX_Thyra.H"
-#include "Tempus_StepperFactory.hpp"
 #include "Tempus_StepperNewmarkImplicitDFormModifierDefault.hpp"
 #include "Tempus_config.hpp"
 #include "Teuchos_VerboseObjectParameterListHelpers.hpp"
@@ -20,9 +19,6 @@
 
 namespace Tempus {
 
-// Forward Declaration for recursive includes (this Stepper <--> StepperFactory)
-template <class Scalar>
-class StepperFactory;
 
 template <class Scalar>
 void
