@@ -11,7 +11,6 @@
 
 #include "Teuchos_VerboseObjectParameterListHelpers.hpp"
 #include "Thyra_VectorStdOps.hpp"
-#include "Tempus_StepperFactory.hpp"
 #include "Tempus_StepperOperatorSplitModifierDefault.hpp"
 
 namespace Tempus {

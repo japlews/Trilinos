@@ -13,7 +13,6 @@
 
 #include "Thyra_VectorStdOps.hpp"
 
-#include "Tempus_StepperFactory.hpp"
 #include "Tempus_UnitTest_Utils.hpp"
 #include "Tempus_StepperRKButcherTableau.hpp"
 
@@ -41,7 +40,6 @@ using Teuchos::ParameterList;
 using Teuchos::sublist;
 using Teuchos::getParametersFromXmlFile;
 
-using Tempus::StepperFactory;
 using Tempus::StepperExplicitRK;
 
 // Comment out any of the following tests to exclude from build/run.
